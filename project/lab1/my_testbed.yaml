@@ -1,0 +1,12 @@
+devices:
+  nxos1:
+    os: nxos
+    type: nexus
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.1.1.10
+    credentials:
+      default:
+        username: "%ENV{PYATS_USERNAME}"
+        password: "%ENV{PYATS_PASSWORD}"
