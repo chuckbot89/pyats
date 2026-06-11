@@ -1,11 +1,12 @@
+---
 devices:
-  nxos1:
-    os: nxos
-    type: nexus
+  R1:
+    os: ios
+    type: router
     connections:
       cli:
         protocol: ssh
-        ip: 10.1.1.10
+        ip: 10.110.100.10
     credentials:
       default:
         username: "%ENV{PYATS_USERNAME}"

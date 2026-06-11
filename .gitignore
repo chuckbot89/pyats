@@ -1,2 +1,22 @@
 # Python virtual environment created by the installation/upgrade workflow
 /venv/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# Test / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build
+build/
+dist/
+*.egg-info/

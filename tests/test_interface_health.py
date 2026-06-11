@@ -1,4 +1,4 @@
-from interface_health import interface_health_check
+from logic.interface_health import interface_health_check
 
 
 def test_interface_health_check():
