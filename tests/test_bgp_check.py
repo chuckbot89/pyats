@@ -8,20 +8,14 @@ import pytest
         pytest.param(
             {
                 "neighbor": {
-                    "10.1.1.1": {"state": "Established"},
-                    "10.1.1.2": {"state": "Established"},
-                    "10.1.1.3": {"state": "Idle"},
-                },
-            },
-            False,
-            id="idle_neighbor",
-        ),
-        pytest.param(
-            {
-                "neighbor": {
-                    "10.1.1.1": {"state": "Established"},
-                    "10.1.1.2": {"state": "Established"},
-                    "10.1.1.3": {"state": "Established"},
+                    "10.1.1.1": {
+                        "state": "Established",
+                        "prefixes": 120
+                        },
+                    "10.1.1.2": {
+                        "state": "Established",
+                        "prefixes": 150
+                        },
                 },
             },
             True,
@@ -30,13 +24,30 @@ import pytest
         pytest.param(
             {
                 "neighbor": {
-                    "10.1.1.1": {"state": "Established"},
-                    "10.1.1.2": {"state": "Established"},
-                    "10.1.1.3": {"state": "Active"},
+                    "10.1.1.1": {
+                        "state": "Idle",
+                        "prefixes": 120
+                        },
+                    "10.1.1.2": {
+                        "state": "Established",
+                        "prefixes": 150
+                        },
                 },
             },
             False,
-            id="active_neighbor",
+            id="idle_neighbor",
+        ),
+        pytest.param(
+            {
+                "neighbor": {
+                    "10.1.1.1": {
+                        "state": "Established",
+                        "prefixes": 100
+                        },
+                },
+            },
+            False,
+            id="boundary_prefix_100",
         ),
         pytest.param(
             {
