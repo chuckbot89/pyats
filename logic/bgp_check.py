@@ -1,4 +1,4 @@
-def are_bgp_neighbors_established(parsed_output):
+def validate_bgp_neighbors(parsed_output):
 
     neighbors = parsed_output["neighbor"]
 
@@ -13,7 +13,7 @@ def are_bgp_neighbors_established(parsed_output):
         if state != "Established":
             return False
         
-        elif prefix <= 100:
+        elif prefix < 100:
             return False
 
     return True
@@ -24,7 +24,7 @@ parsed_output = {
     "neighbor": {
         "10.1.1.1": {
             "state": "Established",
-            "prefixes": 50
+            "prefixes": 100
         },
         "10.1.1.2": {
             "state": "Established",
@@ -33,4 +33,4 @@ parsed_output = {
     }
 }
 
-print(are_bgp_neighbors_established(parsed_output))
+print(validate_bgp_neighbors(parsed_output))

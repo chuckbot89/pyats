@@ -1,0 +1,8 @@
+{
+    "neighbor": {
+        "10.1.1.1": {
+            "state": "Established",
+            "prefixes": 100
+        }
+    }
+}

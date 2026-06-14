@@ -1,4 +1,4 @@
-from logic.bgp_check import are_bgp_neighbors_established
+from logic.bgp_check import validate_bgp_neighbors
 import pytest
 
 
@@ -46,7 +46,7 @@ import pytest
                         },
                 },
             },
-            False,
+            True,
             id="boundary_prefix_100",
         ),
         pytest.param(
@@ -58,5 +58,5 @@ import pytest
         ),
     ]
 )
-def test_are_bgp_neighbors_established(parsed_output, expected):
-    assert are_bgp_neighbors_established(parsed_output) == expected
+def test_validate_bgp_neighbors(parsed_output, expected):
+    assert validate_bgp_neighbors(parsed_output) == expected
