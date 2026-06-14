@@ -18,3 +18,9 @@ def bgp_idle_data():
 def bgp_low_prefix_data():
     with open("tests/fixtures/bgp_low_prefix.json") as f:
         return json.load(f)
+
+@pytest.fixture 
+def bgp_no_neighbor_data():
+
+    with open("tests/fixtures/bgp_no_neighbor.json") as f:
+        return json.load(f)
